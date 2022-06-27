@@ -11,15 +11,17 @@ comm_mode           =  Angular
 nstcomm             =  1000
 ;
 ; output control
-nstlog                   = 5000
-nstenergy                = 5000
-nstxout                  = 500
+nstxout                  = 0
 nstvout                  = 0
 nstfout                  = 0
-; group definition
-nstxtcout                = 0
-xtc-precision            = 0
-xtc-grps                 = system
+;frequency to write energies to log file
+nstlog                   = 5000
+;frequency to write energies to energy file
+nstenergy                = 5000
+;frequency to write coordinates to xtc trajectory
+nstxout-compressed                = 500
+;group(s) to write to xtc trajectory
+compressed-x-grps                 = System
 ;
 ; neighbour searching
 nstlist             = 0
@@ -46,7 +48,7 @@ lincs_iter               = 4
 Tcoupl              = v-rescale
 tc_grps             = system
 tau_t               = 0.1
-ref_t               = __T__
+ref_t               = 300
 ;
 ; pression
 Pcoupl              =  no
@@ -58,5 +60,6 @@ Pcoupl              =  no
 ;
 ; initial velocities
 gen_vel             = yes
-gen_temp            = __T__
-gen_seed            = 1536
+gen_temp            = 300
+gen_seed            = 173529
+
